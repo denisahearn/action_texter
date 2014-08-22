@@ -7,9 +7,9 @@ Gem::Specification.new do |gem|
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/sullman/action_texter"
 
-  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  gem.files         = `git ls-files`.split("\n")
-  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  gem.executables   = (Dir['bin/**/*']).reject {|f| !File.file?(f) }.map{ |f| File.basename(f) }
+  gem.files         = (Dir['**/*']).reject {|f| !File.file?(f) }
+  gem.test_files    = (Dir['spec/**/*']).reject {|f| !File.file?(f) }
   gem.name          = "action_texter"
   gem.require_paths = ["lib"]
   gem.version       = ActionTexter::VERSION::STRING
