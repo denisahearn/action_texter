@@ -14,6 +14,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = ActionTexter::VERSION::STRING
 
-  gem.add_dependency 'actionpack', '~> 3.2.13'
+  gem.add_dependency 'actionpack', '~> 4.0.0'
   gem.add_dependency 'twilio-ruby'
 end
